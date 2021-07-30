@@ -1,19 +1,30 @@
 load "Element_Mixte" 
 
 //SECTION_____________________________________________________
+
 //%%%%%%%%%%%%%%% MAIN DEFINITIONS%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 //Subsection%%%%%%%%%%%%%%%DEFINITION CONSTANTS%%%%%%%%%%%%%%%
 verbosity=0;
+
 int Nmax=100;//Maximum number of time-steps
+
 int n=1, j;//index of time step, linearisation iteration number
+
 int Nh=10;//Number of meshes on each side
+
 real dt0 = 0.02, dt=dt0, dtt=dt/3.0;//time-step sizes
+
 int lvl=2;//determines the refinement of the refence mesh with respect to the base mesh 
+
 int Iter=1, IterNum=50, IterAdap=2;//iteration number; maximum iteration number allowed, Number of iterations after which adaptive criteria will be checked
+
 int SaveInt=10; 
+
 real[int] isovalues(11);// Number of levels of colors in the plot
+
 real g=1;
 real alpha = 0.25;
 real T = 1;
