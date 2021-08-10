@@ -635,7 +635,7 @@ EstquadFlhK[]=varfEstquadFlhK(0,Wh0);
 
 
 //%%%%%Time Quadrature term
-dtSerr=(TP(u) + TP(uold) - 2)*(1-sign(u-1)*sign(uold-1))/(2*dt*Diff(1));//This is an approximation
+dtSerr=(TP(u) + TP(uold) - 2*TP(1))*(1-sign(u-1)*sign(uold-1))/(2*dt*Diff(1));//This is an approximation
 QuadT; // This function computes the H^-1 error in Section: "MAIN PROBLEMS"
 EstquadTK[]=varfEstquadTK(0,Wh0);// This function computes the elementwise error in Section: "MAIN PROBLEMS"
 
@@ -882,7 +882,7 @@ errTotalK=errL2K*werrors[0] + errH1K*werrors[1] + errHinvK*werrors[2];
 }
 
 //********Ploting errors**********************
-if(n==SaveInt)
+if(n%SaveInt==0)
 {
 
 isovalues=errTotalK[].min:(errTotalK[].max-errTotalK[].min)/10:errTotalK[].max; 
